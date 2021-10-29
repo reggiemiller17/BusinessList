@@ -1,0 +1,58 @@
+<% include ../partials/header.ejs %>
+
+
+<!-- edit form -->
+<div class="Container">
+    <div class="row">
+        <div class="col-md-offset-2 col-md-8">
+            <h1> <%= title%> </h1>
+
+            <form class="form" method="post">
+                
+                <div class="form-group">
+                    <label for="nameTextField">Contact Name</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter Contact Name"
+                    name="Contact_Name"
+                    value="<%= ContactsList.Contact_Name %>"
+                    required>
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <label for="numberTextField">Contact Number</label>
+                    <input type="text" class="form-control"
+                    id="numberTextField"
+                    placeholder="Enter Contact Number"
+                    name="Contact_Number" 
+                    value="<%= ContactsList.Contact_Number %>"
+                    required>
+                </div>
+
+                <br>
+
+                <div class="form-group">
+                    <label for="emailTextField">Email Address</label>
+                    <input type="text" class="form-control"
+                    id="emailTextField"
+                    placeholder="Enter Contact Email Address"
+                    name="Email_Address" 
+                    value="<%= ContactsList.Email_Address %>"
+                    required>
+                <br> 
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Update</button>
+                
+                    <a href="/contact-list" class="btn btn-warning">
+                        <i class="fas fa-undo"></i> Cancel</a>
+
+                </div>
+            </form>
+        </div>  
+    </div>
+</div>
+
+<% include ../partials/footer.ejs %>

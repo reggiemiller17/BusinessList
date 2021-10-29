@@ -1,0 +1,49 @@
+<% include ../partials/header.ejs %>
+
+<!-- list of all the contacts in the database -->
+ <main class="Container">
+     <div class="row">
+         <div class="col-md-offset-2 col-md-8">
+             <h1> <%= title%> </h1>
+
+             <% if(typeof displayName == 'string' && displayName) { %>
+             <a href="/contact-list/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i> Add Contact</a>
+             <% } %>
+             <br>
+             <table class="table table-bordered table-striped table-hover">
+                 <!-- first row -->
+                 <tr>
+                     <th class="text-center">Contact Name</th>
+                     <th class="text-center">Contact Number</th>
+                     <th class="text-center">Email Address</th>
+                     <% if(typeof displayName == 'string' && displayName) { %>
+                     <th class="text-center"></th>
+                     <th class="text-center"></th>
+                     <% } %>
+                 </tr>
+
+                 <!-- Repeatable template row -->
+                 <% for(let count = 0; count < ContactsList.length; count++) { %>
+                    <tr>
+                        <td class="text-center"><%= ContactsList[count].Contact_Name %></td>
+                        <td class="text-center"><%= ContactsList[count].Contact_Number %></td>
+                        <td class="text-center"><%= ContactsList[count].Email_Address %></td>
+                        <% if(typeof displayName == 'string' && displayName) { %>
+                        <td class="text-center">
+                            <a href="/contact-list/edit/<%=ContactsList[count]._id %>" class="btn btn-primary btn-sm">
+                            <i class="fas fa-pencil-alt"></i> Update</a>
+                        </td>
+                        <td class="text-center">
+                            <a href="/contact-list/delete/<%=ContactsList[count]._id %>" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash-alt"></i> Delete</a>
+                        </td>
+                        <% } %>
+                    </tr>
+                 <% } %>
+             </table>
+         </div>
+     </div>
+ </main>
+    
+<% include ../partials/footer.ejs %>
