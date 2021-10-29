@@ -22,9 +22,12 @@
     "jquery": "^3.6.0",
     "mongoose": "^6.0.11",
     "morgan": "~1.9.1",
+    "nodemon": "^2.0.14",
     "passport": "^0.5.0",
     "passport-local": "^1.0.0",
-    "passport-local-mongoose": "^6.1.0"
+    "passport-local-mongoose": "^6.1.0",
+    "to": "^0.2.9",
+    "update": "^0.7.4"
   },
   "description": "assignment 2 - reggiemiller17/BusinessList",
   "main": "server.js",
